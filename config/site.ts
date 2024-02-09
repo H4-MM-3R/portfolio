@@ -7,12 +7,12 @@ export const siteConfig = {
             href: "/projects",
         },
         {
-            title: "Experience",
-            href: "/work",
+            title: "Resume",
+            href: "/resume",
         },
         {
             title: "Blog",
-            href: "/personal",
+            href: "/blog",
         },
     ],
     links: {
