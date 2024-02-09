@@ -11,8 +11,8 @@ import clsx from "clsx";
 
 export function Header() {
     return (
-        <motion.header className="bg-transparent w-full flex items-center justify-center fixed top-8 left-0 right-0 z-[100] shadow-white">
-            <div className="dark:bg-black relative border-[2px] darK:border-white w-[800px] rounded-full ">
+        <motion.header className="w-full flex items-center justify-center fixed top-8 left-0 right-0 z-[100] shadow-white">
+            <div className="dark:bg-background bg-white relative border-[2px] w-[800px] rounded-full ">
                 <div className="flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0 mx-8">
                     <Logo />
                     <Nav items={siteConfig.mainNav} />
@@ -21,7 +21,7 @@ export function Header() {
                         whileHover={{ scaleX: 1.1 }}
                         whileTap={{ scale: 0.9 }}
                         transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                        className="dark:bg-white bg-black dark:text-black text-white rounded-full px-6 py-2  overflow-hidden transition-colors duration-500"
+                        className="dark:bg-border bg-border dark:text-foreground text-foreground rounded-full px-6 py-2  overflow-hidden transition-colors duration-500"
                     >
                         <span className={clsx(fontMont.className, "font-bold uppercase")}>Contact Me</span>
                     </motion.button>
