@@ -3,16 +3,16 @@ export const siteConfig = {
     description: "My personal Portfolio",
     mainNav: [
         {
-            title: "Project",
+            title: "Projects",
             href: "/projects",
         },
         {
-            title: "Resume",
-            href: "/resume",
+            title: "Blogs",
+            href: "/blogs",
         },
         {
-            title: "Blog",
-            href: "/blog",
+            title: "Contact",
+            href: "/contact",
         },
     ],
     links: {

@@ -4,7 +4,6 @@ import { fontSans } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { Header } from "../components/header";
 import { ThemeProvider } from "../components/theme-provider";
-import { Footer } from "../components/footer";
 
 export const metadata: Metadata = {
     title: "Create Next App",
@@ -26,7 +25,6 @@ export default function RootLayout({
                     <div className="relative flex flex-col">
                         <div className="flex-1">{children}</div>
                     </div>
-                    <Footer />
                 </ThemeProvider>
             </body>
         </html>

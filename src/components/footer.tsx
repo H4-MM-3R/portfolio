@@ -4,7 +4,8 @@ import FooterTerminal from "./terminal/footer-terminal";
 
 export function Footer() {
     return (
-        <footer className="w-full relative border-[2px]">
+        <footer className="w-full relative">
+        <hr />
         <div className="flex justify-center items-center h-[400px]">
             <FooterTerminal />
         </div>

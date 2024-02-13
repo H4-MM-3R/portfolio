@@ -1,4 +1,4 @@
-import { JetBrains_Mono as FontMono, Inter as FontSans, Montserrat } from "next/font/google"
+import { JetBrains_Mono as FontMono, Inter as FontSans, Lora, Merriweather, Montserrat, Press_Start_2P } from "next/font/google"
 import FontHackNerd from "next/font/local"
 
 export const fontSans = FontSans({
@@ -22,3 +22,19 @@ export const fontNerd = FontHackNerd({
     display: "swap"
 })
 
+export const fontSerif = Merriweather({
+    subsets: ["latin"],
+    variable: "--font-serif",
+    weight: ["300", "400", "700"],
+})
+
+export const fontLora = Lora({
+    subsets: ["latin"],
+    variable: "--font-lora",
+})
+
+export const fontBitMap = Press_Start_2P({
+    subsets: ["latin"],
+    variable: "--font-bitmap",
+    weight: ["400"]
+})

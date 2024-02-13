@@ -5,9 +5,9 @@ import { Nav } from "./nav";
 import { Logo } from "./logo";
 import { ThemeToggle } from "./theme-toggle";
 import { motion } from "framer-motion";
-import { fontMont } from "@/lib/fonts";
-import clsx from "clsx";
+import { fontBitMap } from "@/lib/fonts";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 export function Header() {
   return (
@@ -16,7 +16,7 @@ export function Header() {
         <div className="flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0 mx-8">
           <Logo />
           <Nav items={siteConfig.mainNav} />
-          <Link href="/contact">
+          <Link href="https://drive.google.com/file/d/16T02-bVEIz6guMlm2kYOdpGTdP84ObTE/view?usp=drivesdk" target="_blank" >
             <motion.button
               animate={{ scale: 1 }}
               whileHover={{ scaleX: 1.1 }}
@@ -24,8 +24,8 @@ export function Header() {
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
               className="dark:bg-border bg-border dark:text-foreground text-foreground rounded-full px-6 py-2  overflow-hidden transition-colors duration-500"
             >
-              <span className={clsx(fontMont.className, "font-bold uppercase")}>
-                Contact Me
+              <span className={cn(fontBitMap.className, "text-xs uppercase")}>
+                Resume
               </span>
             </motion.button>
           </Link>
