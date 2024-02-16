@@ -22,17 +22,6 @@ export const fontNerd = FontHackNerd({
     display: "swap"
 })
 
-export const fontSerif = Merriweather({
-    subsets: ["latin"],
-    variable: "--font-serif",
-    weight: ["300", "400", "700"],
-})
-
-export const fontLora = Lora({
-    subsets: ["latin"],
-    variable: "--font-lora",
-})
-
 export const fontBitMap = Press_Start_2P({
     subsets: ["latin"],
     variable: "--font-bitmap",

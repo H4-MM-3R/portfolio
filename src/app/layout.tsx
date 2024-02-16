@@ -18,7 +18,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={cn("bg-background font-sans antialiased", fontSans.variable)}
+                className={cn("bg-background antialiased", fontSans.variable)}
             >
                 <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
                     <Header />

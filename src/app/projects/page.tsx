@@ -1,3 +1,4 @@
+"use client"
 import { Footer } from "@/src/components/footer";
 
 export default function page() {

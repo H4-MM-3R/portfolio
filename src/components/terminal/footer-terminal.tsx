@@ -47,7 +47,7 @@ export default function FooterTerminal() {
         );
         break;
       case "blogs":
-        router.push("/blogs");
+        router.push("/blog");
         break;
       case "contact":
         router.push("/contact");

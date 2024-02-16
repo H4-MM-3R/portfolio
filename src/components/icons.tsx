@@ -1,3 +1,6 @@
+"use client";
+
+
 import { SiLinkedin, SiTwitter } from "@icons-pack/react-simple-icons"
 import {
   LucideProps,

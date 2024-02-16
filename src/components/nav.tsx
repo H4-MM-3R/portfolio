@@ -1,3 +1,5 @@
+"use client";
+
 import { fontMono } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { NavItem } from "@/types/nav";

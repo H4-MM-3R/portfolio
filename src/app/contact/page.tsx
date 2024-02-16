@@ -1,3 +1,5 @@
+"use client";
+
 import { fontBitMap, fontMono } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import Terminal from "@/src/components/terminal/terminal";

@@ -45,7 +45,7 @@ export default function Terminal() {
                 window.open("https://drive.google.com/file/d/16T02-bVEIz6guMlm2kYOdpGTdP84ObTE/view?usp=drivesdk")
                 break;
             case "blogs":
-                router.push("/blogs");
+                router.push("/blog");
                 break;
             case "contact":
                 router.push("/contact");
