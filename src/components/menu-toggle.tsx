@@ -14,6 +14,7 @@ import { usePathname, useRouter } from "next/navigation";
 import Link, { LinkProps } from "next/link";
 import { fontMono } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
+import { Logo } from "./logo";
 
 export function MenuToggle({ items }: MainNavProps) {
     const currentRoute = usePathname() || "/";
