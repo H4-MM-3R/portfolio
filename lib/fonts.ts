@@ -27,3 +27,4 @@ export const fontBitMap = Press_Start_2P({
     variable: "--font-bitmap",
     weight: ["400"]
 })
+

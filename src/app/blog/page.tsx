@@ -1,59 +1,72 @@
-"use client"
-
-import Image from "next/image"
-import Link from "next/link"
+import Image from "next/image";
+import Link from "next/link";
 import { allDocs } from "contentlayer/generated";
+import { Footer } from "@/src/components/footer";
+import { cn } from "@/lib/utils";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
+import { MoveUpRight } from "lucide-react";
 
 export default async function BlogPage() {
-  const blogs = allDocs.filter((blog) => blog.published)
+  const blogs = allDocs.filter((blog) => blog.published);
 
   return (
-    <div className="container max-w-4xl py-6 lg:py-10">
-    <div className="h-[10vh]"></div>
-      <div className="flex flex-col items-start gap-4 md:flex-row md:justify-between md:gap-8">
-        <div className="flex-1 space-y-4">
-          <h1 className="inline-block font-bold text-4xl tracking-tight lg:text-5xl">
-            Blog
+    <div className="container max-w-4xl py-6 lg:py-10 ">
+      <div className="h-[10vh]"></div>
+      <div className=" flex flex-col gap-4 md:flex-row md:justify-center md:gap-8 text-center">
+        <div className=" space-y-4 ">
+          <h1
+            className={cn(
+              GeistSans.className,
+              " text-text-emphasis inline-block font-bold text-4xl tracking-tight lg:text-5xl ",
+            )}
+          >
+            Blogs
           </h1>
-          <p className="text-xl text-muted-foreground">
+          <p className={cn(GeistMono.className, "text-xl text-text-secondary")}>
             A blog built using Contentlayer. Posts are written in MDX.
           </p>
         </div>
       </div>
-      <hr className="my-8" />
+      <hr className="my-8 border-text" />
       {blogs?.length ? (
-        <div className="grid gap-10 sm:grid-cols-2">
-          {blogs.map((blog, index) => (
-            <article
-              key={blog._id}
-              className="group relative flex flex-col space-y-2"
-            >
-              {blog.image && (
-                <Image
-                  src={blog.image}
-                  alt={blog.title}
-                  width={804}
-                  height={452}
-                  className="rounded-md border bg-muted transition-colors"
-                  priority={index <= 1}
-                />
-              )}
-              <h2 className="text-2xl font-black">{blog.title}</h2>
-              {blog.description && (
-                <p className="text-muted-foreground">{blog.description}</p>
-              )}
-                <p className="text-sm text-muted-foreground">
-                "12/12/12"
-                </p>
-              <Link href={blog.slug} className="absolute inset-0">
-                <span className="sr-only">View Article</span>
-              </Link>
-            </article>
+      <div className="flex justify-center items-center">
+        <div className="grid w-[775px]">
+        <div className=" grid gap-2">
+          {blogs.map((blog) => (
+            <Link href={blog.slug}>
+            <div className=" flex justify-between items-center w-full bg-background p-4 rounded-lg transition-all duration-500" >
+              <article
+                key={blog._id}
+                className="group relative flex flex-col sm:flex-row space-y-2 sm:space-x-8"
+              >
+                <div className="group relative flex flex-col space-y-2">
+                  <h2 className="text-2xl font-bold text-text-emphasis">{blog.title}</h2>
+                  {blog.description && (
+                    <p className="text-text">{blog.description}</p>
+                  )}
+                </div>
+              </article>
+              <MoveUpRight />
+            </div>
+            </Link>
           ))}
         </div>
+        <div className="flex flex-col justify-center items-center">
+          <div className="text-xl text-text-emphasis">.</div>
+          <div className="text-xl text-text-emphasis">.</div>
+          <div className="text-xl text-text-emphasis">.</div>
+          <div className="text-xl text-text-emphasis">Coming Soon</div>
+        </div>
+
+        </div>
+      </div>
       ) : (
         <p>No posts published.</p>
       )}
+
+      <div className="h-[20vh]"></div>
+      <Footer />
     </div>
-  )
+  );
 }

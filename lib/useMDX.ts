@@ -1,12 +1,7 @@
-import type { MDXComponents } from 'mdx/types'
+import { MDXContentProps } from '@/types/nav'
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-
-interface MDXContentProps {
-  [props: string]: unknown
-  components?: MDXComponents
-}
 
 export const getMDXComponent = (code: string): React.FC<MDXContentProps> => {
 const mainPacks = {React, ReactDOM}

@@ -4,79 +4,45 @@
 
 @layer base {
   :root {
-    --background: 44, 87% 94%;
-    --foreground: 196, 13%, 45%;
-
-    --muted: 46, 42%, 88%;
-    --muted-foreground: 180, 7%, 60%;     
-
-    --popover: 44, 87% 94%;
-    --popover-foreground: 196, 13%, 45%;
-
-    --border: 46, 42%, 88%;
-    --input: 46, 42%, 88%;
-
-    --card: 44, 87% 94%;
-    --card-foreground: 196, 13%, 45%;
-
-    --primary: 196, 13%, 45%;
-    --primary-foreground: 46, 42%, 88%;
-
-    --secondary: 46, 42%, 88%;
-    --secondary-foreground: 196, 13%, 45%;
-
-    --accent: 46, 42%, 88%;
-    --accent-foreground: 196, 13%, 45%;
-
-    --destructive: 1, 71%, 52%;
-    --destructive-foreground: 46, 42%, 88%;
-
-    --ring: 45, 100%, 35%;
-
+    --background: #fdf6e3;
+    --background-highlights: #eee8d5;
+    --text: #657b83;
+    --text-emphasis: #586e75;
+    --text-secondary: #93a1a1;
+    --yellow: #b58900;
+    --orange: #cb4b16;
+    --red: #dc322f;
+    --magenta: #d33682;
+    --violet: #6c71c4;
+    --blue: #268bd2;
+    --cyan: #2aa198;
+    --green: #859900;
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 192, 100%, 5%;
-    --foreground: 180, 7%, 60%;
-
-    --muted: 192, 81%, 14%;
-    --muted-foreground: 180, 7%, 60%;
-
-    --accent: 192, 81%, 14%;
-    --accent-foreground: 46, 42%, 88%;
-
-    --popover: 193, 100%, 11%;
-    --popover-foreground: 45, 100%, 35%;
-
-    --border: 192, 81%, 14%;
-    --input: 192, 81%, 14%;
-
-    --card: 193, 100%, 11%;
-    --card-foreground: 180, 7%, 60%;
-
-    --primary: 46, 42%, 88%;
-    --primary-foreground: 193, 100%, 11%;
-
-    --secondary: 192, 81%, 14%;
-    --secondary-foreground: 180, 7%, 60%;
-
-    --destructive: 1, 71%, 52%;
-    --destructive-foreground: 46, 42%, 88%;
-
-    --ring: 192, 81%, 14%;
-
+    --background: #002b36;
+    --background-highlights: #073642;
+    --text: #839496;
+    --text-emphasis: #93a1a1;
+    --text-secondary: #586e75;
+    --yellow: #b58900;
+    --orange: #cb4b16;
+    --red: #dc322f;
+    --magenta: #d33682;
+    --violet: #6c71c4;
+    --blue: #268bd2;
+    --cyan: #2aa198;
+    --green: #859900;
     --radius: 0.5rem;
   }
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
   body {
-    @apply bg-background text-foreground;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    @apply bg-background text-text;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
   }
 }
-

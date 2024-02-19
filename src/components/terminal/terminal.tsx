@@ -1,9 +1,9 @@
 "use client";
 
-import { fontNerd } from "@/lib/fonts";
+import { fontBitMap, fontNerd } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
 
 export default function Terminal() {
@@ -35,22 +35,25 @@ export default function Terminal() {
         setCommand(event.target.value);
     };
     const router = useRouter();
+    const path = usePathname();
+    console.log(path);
     const handleKeyDown = (event: any) => {
         switch (command.toLowerCase()) {
             case "projects":
-                router.push("/projects");
+                router.replace("/projects");
                 break;
             case "resume":
-                router.push("/resume");
                 window.open("https://drive.google.com/file/d/16T02-bVEIz6guMlm2kYOdpGTdP84ObTE/view?usp=drivesdk")
                 break;
             case "blogs":
-                router.push("/blog");
+                router.replace("/blog");
                 break;
             case "contact":
-                router.push("/contact");
+                router.replace("/contact");
+                break;
             case "home":
-                router.push("/");
+                router.replace("/");
+                break;
             case "clear":
                 setClear(true);
                 break;
@@ -152,48 +155,36 @@ export default function Terminal() {
         <div
             className={cn(
                 fontNerd.className,
-                "bg-[#FDF6E3] dark:bg-[#002B36] dark:text-[#93A1A1] text-[#586E75] p-[1em] h-full overflow-y-auto text-sm",
+                "bg-background text-text p-[1.5em] overflow-y-auto text-xs transition-all duration-500 rounded-xl",
             )}
             ref={terminalRef}
             onClick={handleClick}
         >
             <div className="mb-[1em]">
                 <div>
-                    <span>
-                        <br></br>
-                        ██╗&nbsp;&nbsp;██╗███████╗███╗&nbsp;&nbsp;&nbsp;███╗██████╗&nbsp;&nbsp;█████╗&nbsp;███╗&nbsp;&nbsp;&nbsp;███╗
-                        <br></br>
-                        ██║&nbsp;&nbsp;██║██╔════╝████╗&nbsp;████║██╔══██╗██╔══██╗████╗&nbsp;████║
-                        <br></br>
-                        ███████║█████╗&nbsp;&nbsp;██╔████╔██║██████╔╝███████║██╔████╔██║
-                        <br></br>
-                        ██╔══██║██╔══╝&nbsp;&nbsp;██║╚██╔╝██║██╔══██╗██╔══██║██║╚██╔╝██║
-                        <br></br>
-                        ██║&nbsp;&nbsp;██║███████╗██║&nbsp;╚═╝&nbsp;██║██║&nbsp;&nbsp;██║██║&nbsp;&nbsp;██║██║&nbsp;╚═╝&nbsp;██║
-                        <br></br>
-                        ╚═╝&nbsp;&nbsp;╚═╝╚══════╝╚═╝&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;╚═╝╚═╝&nbsp;&nbsp;╚═╝╚═╝&nbsp;&nbsp;╚═╝╚═╝&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;╚═╝
-                        <br></br>
-                    </span>
+                    <h1 className={cn(fontBitMap.className, "text-lg xl:text-4xl font-black uppercase")}>Hemram's Portfolio</h1>
                 </div>
                 <div>Type 'help' to see the list of available commands.</div>
                 {output.map((item: any, index: any) => (
                     <div className="mb-[0.2em]" key={index}>
                         <h1 className={cn(fontNerd.className, "mb-[0.1em] text-sm")}>
                             <span className="text-[#859900]">hemram@H4-MM-3R</span>:
-                            <span className="text-[#268BD2]">~/portfolio</span>${" "}
+                            <span className="text-[#268BD2]">~</span>{" "}
+                            <span className="text-[#268BD2]">${path}</span>
                         </h1>
                         {item}
                     </div>
                 ))}
             </div>
             <div className="flex">
-                <h1 className="w-[250px]">
+                <h1 className="w-fit">
                     <span className="text-[#859900]">hemram@H4-MM-3R</span>:
-                    <span className="text-[#268BD2]">~/portfolio</span>${" "}
+                    <span className="text-[#268BD2]">~</span>{" "}
+                    <span className="text-[#268BD2]">${path}</span>
                 </h1>
                 <input
                     ref={inputRef}
-                    className="outline-none bg-[#FDF6E3] dark:bg-[#002B36] dark:text-[#93A1A1] text-[#586E75]"
+                    className="outline-none text-text bg-background pl-[1em] transition-all duration-500"
                     value={command}
                     onChange={handleInputChange}
                     onKeyDown={handleKeyDown}

@@ -7,13 +7,14 @@ import Image from "next/image"
 import { cn } from "@/lib/utils"
 import { MdxCard } from "./mdx-card"
 import { Callout } from "./mdx-callout"
-import { useMDXComponent } from "@/hooks/useMDX"
+import { useMDXComponent } from "@/lib/useMDX"
+import { MdxProps } from "@/types/nav"
 
 const components = {
   h1: ({ className, ...props }: any) => (
     <h1
       className={cn(
-        "mt-2 scroll-m-20 text-4xl font-bold tracking-tight",
+        "mt-2 scroll-m-20 text-6xl font-bold tracking-tight",
         className
       )}
       {...props}
@@ -22,7 +23,7 @@ const components = {
   h2: ({ className, ...props }: any) => (
     <h2
       className={cn(
-        "mt-10 scroll-m-20 border-b pb-1 text-3xl font-semibold tracking-tight first:mt-0",
+        "mt-10 scroll-m-20 pb-1 text-cyan text-4xl font-bold tracking-tight first:mt-0",
         className
       )}
       {...props}
@@ -66,7 +67,7 @@ const components = {
   ),
   a: ({ className, ...props }: any) => (
     <a
-      className={cn("font-medium underline underline-offset-4", className)}
+      className={cn("font-medium underline underline-offset-4 text-blue", className)}
       {...props}
     />
   ),
@@ -88,7 +89,7 @@ const components = {
   blockquote: ({ className, ...props }: any) => (
     <blockquote
       className={cn(
-        "mt-6 border-l-2 pl-6 italic [&>*]:text-muted-foreground",
+        "mt-6 border-l-2 border-cyan pl-6 italic [&>*]:text-text-emphasis",
         className
       )}
       {...props}
@@ -112,14 +113,14 @@ const components = {
 
   tr: ({ className, ...props }: React.HTMLAttributes<HTMLTableRowElement>) => (
     <tr
-      className={cn("m-0 border-t p-0 even:bg-muted", className)}
+      className={cn("m-0 border-t p-0 even:bg-background-highlights", className)}
       {...props}
     />
   ),
   th: ({ className, ...props }: any) => (
     <th
       className={cn(
-        "border px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right",
+        "border px-4 py-2 text-left text-2xl font-bold bg-background-highlights [&[align=center]]:text-center [&[align=right]]:text-right",
         className
       )}
       {...props}
@@ -137,7 +138,7 @@ const components = {
   pre: ({ className, ...props }: any) => (
     <pre
       className={cn(
-        "mb-4 mt-6 overflow-x-auto rounded-lg border bg-black py-4",
+        "mb-4 mt-6 overflow-x-auto rounded-lg",
         className
       )}
       {...props}
@@ -146,7 +147,7 @@ const components = {
   code: ({ className, ...props }: any) => (
     <code
       className={cn(
-        "relative rounded border px-[0.3rem] py-[0.2rem] font-mono text-sm",
+        "relative rounded-lg px-[0.3rem] py-[0.2rem] font-mono text-sm text-text-emphasis bg-background-highlights",
         className
       )}
       {...props}
@@ -155,10 +156,6 @@ const components = {
   Image,
   Callout,
   Card: MdxCard,
-}
-
-interface MdxProps {
-  code: string
 }
 
 export function Mdx({ code }: MdxProps) {

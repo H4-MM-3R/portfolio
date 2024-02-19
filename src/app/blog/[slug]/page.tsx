@@ -3,18 +3,13 @@
 import { fontBitMap } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { Mdx } from "@/src/components/mdx";
+import { BlogProps } from "@/types/nav";
 import { allDocs } from "contentlayer/generated";
 import { motion } from "framer-motion";
 import { ChevronLeft } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-
-interface BlogProps {
-  params: {
-    slug: string;
-  };
-}
 
 async function getDocFromParams(slug: string) {
   const doc = allDocs.find((doc) => doc.slugAsParam === slug);
@@ -26,9 +21,9 @@ async function getDocFromParams(slug: string) {
 export default async function page({ params }: BlogProps) {
   const blog = await getDocFromParams(params.slug);
   return (
-    <div>
+    <div className="bg-background-highlights">
       <div className="h-[10vh]"></div>
-      <article className="container relative max-w-3xl py-6 lg:py-10">
+      <article className="container relative max-w-3xl py-6 lg:py-10 bg-background">
         <Link
           href="/blog"
           className="absolute left-[-200px] top-14 hidden xl:inline-flex"
@@ -43,7 +38,7 @@ export default async function page({ params }: BlogProps) {
           >
             Published on "April 9, 2023"
           </time>
-          <h1 className="mt-2 inline-block font-black text-4xl leading-tight lg:text-5xl">
+          <h1 className="mt-2 inline-block font-black text-4xl leading-tight lg:text-5xl text-text-emphasis">
             {blog.title}
           </h1>
         </div>
@@ -58,7 +53,7 @@ export default async function page({ params }: BlogProps) {
           />
         )}
         <Mdx code={blog.body.code} />
-        <hr className="mt-12" />
+        <hr className="mt-12 border-text" />
         <div className="flex justify-center py-6 lg:py-10">
 
           <Link

@@ -3,6 +3,7 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
+import fs from "fs";
 
 /** @type {import('contentlayer/source-files').ComputedFields} */
 const computedFields = {
@@ -35,7 +36,7 @@ export const Doc = defineDocumentType(() => ({
         image: {
             type: "string",
             required: true,
-        }
+        },
     },
     computedFields,
 }));
