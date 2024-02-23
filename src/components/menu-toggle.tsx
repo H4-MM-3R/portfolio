@@ -15,12 +15,14 @@ import Link, { LinkProps } from "next/link";
 import { fontMono } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { Logo } from "./logo";
+import { useState } from "react";
 
 export function MenuToggle({ items }: MainNavProps) {
+const [open, setOpen] = useState(false)
     const currentRoute = usePathname() || "/";
 
   return (
-    <Sheet key="left">
+    <Sheet key="left" open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
         <button className="inline-flex items-center justify-center rounded-full text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background h-8 w-8 lg:h-10 lg:w-10 hover:bg-background-highlights">
           <Menu className="h-5 w-5" />
@@ -31,6 +33,7 @@ export function MenuToggle({ items }: MainNavProps) {
             <MobileLink
               href="/"
               className="flex items-center justify-center"
+              onOpenChange={setOpen}
             >
               <div className="flex flex-col items-center space-y-4">
                 <div className="relative lg:hidden">
@@ -45,10 +48,11 @@ export function MenuToggle({ items }: MainNavProps) {
             {items?.map(
               (item, index) =>
                 item.href && (
-                  <Link
+                  <MobileLink
                     key={index}
                     href={item.href}
                     data-active={currentRoute === item.href}
+                    onOpenChange={setOpen}
                     className={cn(
                       fontMono.className,
                       `${
@@ -59,7 +63,7 @@ export function MenuToggle({ items }: MainNavProps) {
                     )}
                   >
                     {item.title}
-                  </Link>
+                  </MobileLink>
                 ),
             )}
           </SheetDescription>

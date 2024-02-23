@@ -162,7 +162,7 @@ export default function Terminal() {
         >
             <div className="mb-[1em]">
                 <div>
-                    <h1 className={cn(fontBitMap.className, "text-lg xl:text-4xl font-black uppercase")}>Hemram's Portfolio</h1>
+                    <h1 className={cn(fontBitMap.className, "text-lg xl:text-4xl font-black uppercase")}>Terminal</h1>
                 </div>
                 <div>Type 'help' to see the list of available commands.</div>
                 {output.map((item: any, index: any) => (
@@ -190,6 +190,7 @@ export default function Terminal() {
                     onKeyDown={handleKeyDown}
                 />
             </div>
+            <div className="h-[20vh]"/>
         </div>
     );
 }

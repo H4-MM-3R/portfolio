@@ -1,4 +1,4 @@
-import { JetBrains_Mono as FontMono, Inter as FontSans, Lora, Merriweather, Montserrat, Press_Start_2P } from "next/font/google"
+import { JetBrains_Mono as FontMono, Inter as FontSans, Montserrat, Press_Start_2P } from "next/font/google"
 import FontHackNerd from "next/font/local"
 
 export const fontSans = FontSans({

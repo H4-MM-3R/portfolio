@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { Header } from "../components/header";
 import { ThemeProvider } from "../components/theme-provider";
 import { HeaderMini } from "../components/mini-header";
+import TerminalIcon from "../components/terminal/terminal-icon";
 
 export const metadata: Metadata = {
     title: "Create Next App",
@@ -22,12 +23,15 @@ export default function RootLayout({
                 className={cn("bg-background-highlights antialiased transition-colors duration-500 ", fontSans.variable)}
             >
                 <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+                <div className="relative flex min-h-screen flex-col overflow-hidden">
                     <Header />
                     <HeaderMini />
 
                     <div className="relative flex flex-col">
                         <div className="flex-1">{children}</div>
                     </div>
+                    <TerminalIcon />
+                </div>
                 </ThemeProvider>
             </body>
         </html>
