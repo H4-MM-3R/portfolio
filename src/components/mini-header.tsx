@@ -13,7 +13,7 @@ import { MenuToggle } from "./menu-toggle";
 
 export function HeaderMini() {
     return (
-        <motion.header className="lg:hidden w-full fixed left-0 right-0 z-50 bg-background-highlights">
+        <motion.header className="lg:hidden w-full fixed left-0 right-0 z-50 bg-background-highlights transition-colors duration-500">
         <div className="h-6" />
             <div className="relative flex justify-around items-center">
                 <MenuToggle items={siteConfig.mainNav} />
