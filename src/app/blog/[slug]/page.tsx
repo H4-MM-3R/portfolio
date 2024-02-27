@@ -3,6 +3,7 @@
 import { fontBitMap } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { Mdx } from "@/src/components/mdx";
+import PageTransiton from "@/src/components/page-transition";
 import { BlogProps } from "@/types/nav";
 import { allDocs } from "contentlayer/generated";
 import { motion } from "framer-motion";
@@ -22,7 +23,7 @@ export default async function page({ params }: BlogProps) {
   const blog = await getDocFromParams(params.slug);
   return (
     <div className="bg-background-highlights">
-      <div className="h-[10vh]"></div>
+      <div className="h-[8vh] sm:h-[15vh]"></div>
       <article className="container relative max-w-3xl py-6 lg:py-10 bg-background">
         <Link
           href="/blog"
@@ -54,7 +55,7 @@ export default async function page({ params }: BlogProps) {
         )}
         <Mdx code={blog.body.code} />
         <hr className="mt-12 border-text" />
-        <div className="flex justify-center py-6 lg:py-10">
+        <div className="flex justify-center py-10">
 
           <Link
             href="/blog"

@@ -1,8 +1,9 @@
 import { MDXComponents } from "mdx/types";
+import { Url } from "next/dist/shared/lib/router/router";
 
 export interface NavItem {
   title: string
-  href?: string
+  href: Url 
   disabled?: boolean
   external?: boolean
 }

@@ -1,17 +1,14 @@
-"use client"
+"use client";
 
-import Terminal from "../components/terminal/terminal";
+import PageTransiton from "../components/page-transition";
+import { PinContainer } from "../components/ui/hover-card";
 export default function Home() {
-    return (
-        <div>
-            <div className="h-[20vh]"></div>
-            <div className="flex justify-center ">
-                <div className="rounded-xl w-[93vw] md:w-[62vw] lg:w-[68vw] xl:w-[72vw] h-[70vh] bg-background transition-colors duration-500 shadow-2xl">
-                <Terminal />
-                </div>
-            </div>
-            <div className="h-[100vh]"></div>
-        </div>
-    );
+  return (
+    <PageTransiton className="container">
+      <div className="h-[20vh]"></div>
+      <h1>Typewriter Effect</h1>
+      <div className="flex justify-center "></div>
+      <div className="h-[100vh]"></div>
+    </PageTransiton>
+  );
 }
-

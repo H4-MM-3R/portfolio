@@ -12,6 +12,8 @@ import {
 import {
   Drawer,
   DrawerContent,
+  DrawerHeader,
+  DrawerTitle,
   DrawerTrigger,
 } from "@/src/components/ui/drawer";
 import { useMediaQuery } from "@/lib/useMediaQuery";
@@ -45,9 +47,8 @@ export default function TerminalIcon() {
         </div>
       </DrawerTrigger>
       <DrawerContent>
-      <div>
-            <Terminal />
-      </div>
+        <div className="mx-auto h-2 mb-4 w-[100px] rounded-full bg-text-secondary" />
+        <Terminal />
       </DrawerContent>
     </Drawer>
   );

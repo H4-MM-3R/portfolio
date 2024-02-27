@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { allDocs } from "contentlayer/generated";
 import { Footer } from "@/src/components/footer";
@@ -6,12 +5,13 @@ import { cn } from "@/lib/utils";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import { MoveUpRight } from "lucide-react";
+import PageTransiton from "@/src/components/page-transition";
 
 export default async function BlogPage() {
   const blogs = allDocs.filter((blog) => blog.published);
 
   return (
-    <div className="container max-w-4xl py-6 lg:py-10 ">
+    <PageTransiton className="container max-w-4xl py-6 lg:py-10 ">
       <div className="h-[10vh]"></div>
       <div className=" flex flex-col gap-4 md:flex-row md:justify-center md:gap-8 text-center">
         <div className=" space-y-4 ">
@@ -67,6 +67,6 @@ export default async function BlogPage() {
 
       <div className="h-[20vh]"></div>
       <Footer />
-    </div>
+    </PageTransiton>
   );
 }

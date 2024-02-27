@@ -14,7 +14,7 @@ const components = {
   h1: ({ className, ...props }: any) => (
     <h1
       className={cn(
-        "mt-2 scroll-m-20 text-6xl font-bold tracking-tight",
+        "my-4 text-cyan text-4xl font-bold",
         className
       )}
       {...props}
@@ -23,7 +23,7 @@ const components = {
   h2: ({ className, ...props }: any) => (
     <h2
       className={cn(
-        "mt-10 scroll-m-20 pb-1 text-cyan text-4xl font-bold tracking-tight first:mt-0",
+        "my-4 text-4xl font-bold tracking-tight",
         className
       )}
       {...props}
@@ -32,7 +32,7 @@ const components = {
   h3: ({ className, ...props }: any) => (
     <h3
       className={cn(
-        "mt-8 scroll-m-20 text-2xl font-semibold tracking-tight",
+        "my-2 text-3xl font-bold tracking-tight ",
         className
       )}
       {...props}
@@ -41,7 +41,7 @@ const components = {
   h4: ({ className, ...props }: any) => (
     <h4
       className={cn(
-        "mt-8 scroll-m-20 text-xl font-semibold tracking-tight",
+        "my-2 text-2xl font-bold tracking-tight",
         className
       )}
       {...props}
@@ -50,7 +50,7 @@ const components = {
   h5: ({ className, ...props }: any) => (
     <h5
       className={cn(
-        "mt-8 scroll-m-20 text-lg font-semibold tracking-tight",
+        "my-2 text-xl font-bold tracking-tight",
         className
       )}
       {...props}
@@ -59,7 +59,7 @@ const components = {
   h6: ({ className, ...props }: any) => (
     <h6
       className={cn(
-        "mt-8 scroll-m-20 text-base font-semibold tracking-tight",
+        "my-4 text-lg font-bold leading-tight",
         className
       )}
       {...props}
@@ -73,7 +73,7 @@ const components = {
   ),
   p: ({ className, ...props }: any) => (
     <p
-      className={cn("leading-7 [&:not(:first-child)]:mt-6", className)}
+      className={cn("leading-6 [&:not(:first-child)]:mt-6", className)}
       {...props}
     />
   ),
@@ -147,7 +147,7 @@ const components = {
   code: ({ className, ...props }: any) => (
     <code
       className={cn(
-        "relative rounded-lg px-[0.3rem] py-[0.2rem] font-mono text-sm text-text-emphasis bg-background-highlights",
+        "relative rounded-lg px-[0.3rem] py-[0.2rem] font-mono text-xs text-text-emphasis bg-background-highlights overflow-x-auto",
         className
       )}
       {...props}
