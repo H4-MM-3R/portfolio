@@ -16,8 +16,8 @@ export function Nav({ items }: MainNavProps) {
         <Link
           className={cn(
             fontMono.className,
-            "relative",
-            `${item.href === currentRoute ? "text-cyan font-black" : "text-text-secondary"}`,
+            "relative transtion-colors duration-700",
+            `${item.href === currentRoute ? "text-invert-accent-hightlights font-black" : "text-text-secondary"}`,
           )}
           href={item.href}
           key={item.href.toString()}
@@ -25,7 +25,7 @@ export function Nav({ items }: MainNavProps) {
           {item.href === currentRoute && (
             <motion.div
               layoutId="underline"
-              className="absolute left-0 top-full block h-[2px] w-full bg-cyan"
+              className="absolute left-0 top-full block h-[2px] w-full bg-invert-accent-hightlights transition-colors duration-700"
             />
           )}
           {item.title}

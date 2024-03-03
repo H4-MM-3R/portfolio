@@ -1,4 +1,4 @@
-import { JetBrains_Mono as FontMono, Inter as FontSans, Montserrat, Press_Start_2P } from "next/font/google"
+import { JetBrains_Mono as FontMono, Inter as FontSans, Montserrat, Press_Start_2P, Space_Grotesk } from "next/font/google"
 import FontHackNerd from "next/font/local"
 
 export const fontSans = FontSans({
@@ -26,5 +26,10 @@ export const fontBitMap = Press_Start_2P({
     subsets: ["latin"],
     variable: "--font-bitmap",
     weight: ["400"]
+})
+
+export const fontGrot = Space_Grotesk({
+    subsets: ["latin"],
+    variable: "--font-space-grot",
 })
 

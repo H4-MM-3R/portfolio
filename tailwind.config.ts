@@ -26,6 +26,10 @@ const config: Config = {
                     emphasis: "var(--text-emphasis)",
                     secondary: "var(--text-secondary)",
                 },
+                invert: {
+                    accent: "var(--invert-accent)",
+                    "accent-hightlights": "var(--invert-accent-hightlights)",
+                },
                 red: "var(--red)",
                 blue: "var(--blue)",
                 yellow: "var(--yellow)",
@@ -54,7 +58,9 @@ const config: Config = {
                 "accordion-down": "accordion-down 0.2s ease-out",
                 "accordion-up": "accordion-up 0.2s ease-out",
             },
-
+            transitionTimingFunction: {
+                'ease-in-out-quad': 'cubic-bezier(.76,0,.24,1)'
+            },
             backgroundImage: {
                 "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
                 "gradient-conic":

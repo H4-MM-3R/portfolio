@@ -11,7 +11,7 @@ import { ThemeToggle } from './theme-toggle'
 export default function MainHeader() {
   return (
     <div>
-      <div className="bg-background relative border-text border-[2px] w-[75vw] rounded-full transition-colors duration-500 ">
+      <div className="bg-background relative border-text border-[2px] w-[75vw] rounded-full transition-colors duration-700">
         <div className="flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0 mx-8 ">
           <Logo />
           <Nav items={siteConfig.mainNav} />
@@ -25,7 +25,7 @@ export default function MainHeader() {
                 whileHover={{ scaleX: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                className="bg-text-emphasis text-background-highlights px-6 py-2 rounded-full overflow-hidden transition-colors duration-500 border-text border-[2px]"
+                className="bg-invert-accent-hightlights text-background px-6 py-2 rounded-full overflow-hidden transition-colors duration-700 border-text border-[2px]"
               >
                 <span className={cn(fontBitMap.className, "text-xs uppercase")}>
                   Resume

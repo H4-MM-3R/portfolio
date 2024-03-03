@@ -132,7 +132,7 @@ export default function Terminal() {
     <div
       className={cn(
         fontNerd.className,
-        "bg-background text-text p-[1.5em] text-xs transition-all duration-500 rounded-xl h-[40vh] overflow-y-auto",
+        "bg-background text-text p-[1.5em] text-xs transition-all duration-700 rounded-xl h-[40vh] overflow-y-auto",
       )}
       ref={terminalRef}
       onClick={handleClick}
@@ -160,7 +160,7 @@ export default function Terminal() {
           </div>
         ))}
       </div>
-      <div className="flex">
+      <div className="flex w-full justify-evenly">
         <h1 className="w-fit">
           <span className="text-[#859900]">hemram@H4-MM-3R</span>:
           <span className="text-[#268BD2]">~</span>
@@ -169,7 +169,7 @@ export default function Terminal() {
         </h1>
         <input
           ref={inputRef}
-          className="outline-none text-text bg-background pl-[1em] transition-all duration-500  "
+          className="outline-none text-text bg-background pl-[1em] transition-all duration-700 w-[154px]"
           value={command}
           onChange={handleInputChange}
           onKeyDown={handleKeyDown}

@@ -9,6 +9,8 @@
     --text: #657b83;
     --text-emphasis: #586e75;
     --text-secondary: #93a1a1;
+    --invert-accent: #002b36;
+    --invert-accent-hightlights: #073642;
     --yellow: #b58900;
     --orange: #cb4b16;
     --red: #dc322f;
@@ -26,6 +28,8 @@
     --text: #839496;
     --text-emphasis: #93a1a1;
     --text-secondary: #586e75;
+    --invert-accent: #fdf6e3;
+    --invert-accent-hightlights: #eee8d5;
     --yellow: #b58900;
     --orange: #cb4b16;
     --red: #dc322f;

@@ -23,14 +23,14 @@ export function MenuToggle({ items }: MainNavProps) {
     const currentRoute = usePathname() || "/";
 
     return (
-        <Sheet key="left" open={open} onOpenChange={setOpen}>
+        <Sheet key="right" open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
                 <button className="inline-flex items-center justify-center rounded-full text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background h-8 w-8 lg:h-10 lg:w-10 hover:bg-background-highlights">
                     <Menu className="h-5 w-5" />
                     <span className="sr-only">Toggle theme</span>
                 </button>
             </SheetTrigger>
-            <SheetContent side="left">
+            <SheetContent side="right">
                 <MobileLink
                     href="/"
                     className="flex items-center justify-center"
@@ -57,8 +57,8 @@ export function MenuToggle({ items }: MainNavProps) {
                                         className={cn(
                                             fontMono.className,
                                             `${currentRoute === item.href
-                                                ? "flex items-center text-lg font-bold text-cyan"
-                                                : "flex items-center text-lg font-bold text-muted-foreground hover:text-[#2aa198] transition-colors duration-700"
+                                                ? "flex items-center text-lg font-bold text-invert-accent-hightlights border-b-invert-accent-hightlights border-b-2"
+                                                : "flex items-center text-lg  text-muted-foreground "
                                             }`,
                                         )}
                                     >
@@ -76,7 +76,7 @@ export function MenuToggle({ items }: MainNavProps) {
                                 whileHover={{ scaleX: 1.1 }}
                                 whileTap={{ scale: 0.9 }}
                                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                                className="bg-text-emphasis text-background-highlights px-6 py-2 rounded-full overflow-hidden transition-colors duration-500 border-text border-[2px]"
+                                className="bg-text-emphasis text-background-highlights px-6 py-2 rounded-full overflow-hidden transition-colors duration-700 border-text border-[2px]"
                             >
                                 <span className={cn(fontBitMap.className, "text-xs uppercase")}>
                                     Resume

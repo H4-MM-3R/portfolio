@@ -2,11 +2,13 @@
 
 import { motion } from "framer-motion";
 import MainHeader from "./main-header";
+import { HeaderMini } from "./mini-header";
 
 export function Header() {
   return (
-    <motion.header className="hidden w-screen lg:flex items-center justify-center fixed top-8 z-40 ">
-    <MainHeader />
+    <motion.header className="w-screen items-center justify-center fixed top-8 z-40 hidden lg:flex">
+      <MainHeader />
+      
     </motion.header>
   );
 }
