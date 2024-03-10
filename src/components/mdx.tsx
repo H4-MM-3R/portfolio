@@ -14,7 +14,7 @@ const components = {
   h1: ({ className, ...props }: any) => (
     <h1
       className={cn(
-        "my-4 text-invert-accent-hightlights text-3xl font-bold",
+        "my-4 text-invert-accent-hightlights text-2xl md:text-4xl font-bold",
         className
       )}
       {...props}
@@ -23,7 +23,7 @@ const components = {
   h2: ({ className, ...props }: any) => (
     <h2
       className={cn(
-        "my-4 text-3xl font-bold tracking-tight text-text-emphasis",
+        "my-4 text-2xl md:text-4xl font-bold tracking-tight text-text-emphasis",
         className
       )}
       {...props}
@@ -32,7 +32,7 @@ const components = {
   h3: ({ className, ...props }: any) => (
     <h3
       className={cn(
-        "my-2 text-2xl font-bold tracking-tight text-text ",
+        "my-2 text-xl md:text-3xl font-bold tracking-tight text-text ",
         className
       )}
       {...props}
@@ -41,7 +41,7 @@ const components = {
   h4: ({ className, ...props }: any) => (
     <h4
       className={cn(
-        "my-2 text-xl font-bold tracking-tight text-text",
+        "my-2 text-lg  md:text-2xl font-bold tracking-tight text-text",
         className
       )}
       {...props}
@@ -50,7 +50,7 @@ const components = {
   h5: ({ className, ...props }: any) => (
     <h5
       className={cn(
-        "my-2 text-lg font-bold tracking-tight text-text",
+        "my-2 text-base md:text-xl font-bold tracking-tight text-text",
         className
       )}
       {...props}
@@ -59,7 +59,7 @@ const components = {
   h6: ({ className, ...props }: any) => (
     <h6
       className={cn(
-        "my-4 text-lg font-bold leading-tight text-text",
+        "my-4 text-base md:text-xl font-bold leading-tight text-text",
         className
       )}
       {...props}
@@ -74,18 +74,18 @@ const components = {
   ),
   p: ({ className, ...props }: any) => (
     <p
-      className={cn("leading-6 [&:not(:first-child)]:mt-6", className)}
+      className={cn(" leading-6 [&:not(:first-child)]:mt-6 text-text-emphasis", className)}
       {...props}
     />
   ),
   ul: ({ className, ...props }: any) => (
-    <ul className={cn("my-6 ml-6 list-disc", className)} {...props} />
+    <ul className={cn("my-6 ml-6 list-disc text-text-emphasis", className)} {...props} />
   ),
   ol: ({ className, ...props }: any) => (
-    <ol className={cn("my-6 ml-6 list-decimal", className)} {...props} />
+    <ol className={cn("my-6 ml-6 list-decimal text-text-emphasis", className)} {...props} />
   ),
   li: ({ className, ...props }: any) => (
-    <li className={cn("mt-2", className)} {...props} />
+    <li className={cn("mt-2 text-text-emphasis", className)} {...props} />
   ),
   blockquote: ({ className, ...props }: any) => (
     <blockquote

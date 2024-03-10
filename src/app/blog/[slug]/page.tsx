@@ -68,7 +68,7 @@ export default function page({ params }: BlogProps) {
           </h1>
           <time
             dateTime="April 9, 2023"
-            className="block text-base text-text-emphasis"
+            className="block text-base text-text-secondary"
           >
             {blog.date} . {blog.duration} min to read
           </time>
