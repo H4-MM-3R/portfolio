@@ -28,6 +28,12 @@ export function Nav({ items }: MainNavProps) {
               className="absolute left-0 top-full block h-[2px] w-full bg-invert-accent-hightlights transition-colors duration-700"
             />
           )}
+          {item.href === currentRoute && (
+            <motion.div
+              layoutId="underline"
+              className="absolute left-0 top-full block h-[2px] w-full bg-invert-accent-hightlights transition-colors duration-700"
+            />
+          )}
           {item.title}
         </Link>
       ))}

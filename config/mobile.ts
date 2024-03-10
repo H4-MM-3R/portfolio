@@ -6,7 +6,7 @@ export const menu = {
     right: "-30px",
     opacity: 1,
     transition: {
-      duration: 0.75,
+      duration: 0.5,
       type: "tween",
       ease: [0.76, 0, 0.24, 1],
     },
@@ -18,8 +18,7 @@ export const menu = {
     right: "0px",
     opacity: 0,
     transition: {
-      duration: 0.75,
-      delay: 0.35,
+      duration: 0.5,
       type: "tween",
       ease: [0.76, 0, 0.24, 1],
     },
@@ -31,8 +30,8 @@ export const menuLogo = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.75,
-      delay: 0.45,
+      duration: 0.5,
+      delay: 0.35,
       type: "tween",
       ease: [0.76, 0, 0.24, 1],
     },
@@ -41,7 +40,7 @@ export const menuLogo = {
     opacity: 0,
     y: -20,
     transition: {
-      duration: 0.75,
+      duration: 0.5,
       type: "tween",
       ease: [0.76, 0, 0.24, 1],
     },
@@ -53,8 +52,8 @@ export const menuItems = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.75,
-      delay: 0.35 + i * 0.1,
+      duration: 0.5,
+      delay: 0.25 + i * 0.05,
       type: "tween",
       ease: [0.76, 0, 0.24, 1],
     },
@@ -63,7 +62,7 @@ export const menuItems = {
     opacity: 0,
     y: 20,
     transition: {
-      duration: 0.75,
+      duration: 0.5,
       type: "tween",
       ease: [0.76, 0, 0.24, 1],
     },
@@ -89,3 +88,26 @@ export const links = [
     href: "/contact",
   },
 ];
+
+
+export const menuResume = {
+  open: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      delay: 0.45,
+      type: "tween",
+      ease: [0.76, 0, 0.24, 1],
+    },
+  },
+  closed: {
+    opacity: 0,
+    y: 20,
+    transition: {
+      duration: 0.5,
+      type: "tween",
+      ease: [0.76, 0, 0.24, 1],
+    },
+  },
+};

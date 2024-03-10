@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import React from "react";
 import { ThemeToggle } from "./theme-toggle";
-import { links, menuItems, menuLogo } from "@/config/mobile";
+import { links, menuItems, menuLogo, menuResume } from "@/config/mobile";
 import { usePathname } from "next/navigation";
-import { fontGrot, fontMono } from "@/lib/fonts";
+import { fontBitMap, fontMono } from "@/lib/fonts";
 
 export default function MobileNav({
   isActive,
@@ -14,8 +14,7 @@ export default function MobileNav({
   isActive: any;
   setIsActive: any;
 }) {
-
- const path = usePathname();
+  const path = usePathname();
   return (
     <div
       className={cn(
@@ -33,6 +32,7 @@ export default function MobileNav({
         const { title, href } = link;
         return (
           <motion.div
+            key={i}
             custom={i}
             variants={menuItems}
             animate={isActive ? "open" : "closed"}
@@ -40,7 +40,13 @@ export default function MobileNav({
           >
             <Link
               href={href}
-              className={cn(fontMono.className, "text-xl w-fit", (path === href ? "text-invert-accent-hightlights font-bold border-b-2 border-invert-accent-hightlights": "text-text-secondary"))}
+              className={cn(
+                fontMono.className,
+                "text-xl w-fit ",
+                path === href
+                  ? "text-invert-accent-hightlights font-bold transition-colors duration-700"
+                  : "text-text-secondary transition-colors duration-700",
+              )}
               onClick={() => setIsActive(!isActive)}
             >
               {title}
@@ -48,6 +54,32 @@ export default function MobileNav({
           </motion.div>
         );
       })}
+      <motion.div
+        variants={menuResume}
+        animate={isActive ? "open" : "closed"}
+        className="flex items-center mt-4"
+      >
+        <motion.button
+          whileTap={{ y: 0, x: 0 }}
+          initial={{ y: -7, x: -7 }}
+          transition={{ type: "spring", stiffness: 400, damping: 17 }}
+          className="z-10"
+        >
+          <Link 
+          target="_blank"
+          href="https://drive.google.com/file/d/16T02-bVEIz6guMlm2kYOdpGTdP84ObTE/view?usp=drivesdk">
+            <span
+              className={cn(
+                fontBitMap.className,
+                "text-invert-accent-hightlights bg-background-highlights outline outline-text-emphasis p-4 transition-colors duration-700",
+              )}
+            >
+              Resume
+            </span>
+          </Link>
+        </motion.button>
+        <div className="absolute h-[43px] w-[125px] bg-invert-accent-hightlights z-0 outline outline-invert-accent-hightlights transition-colors duration-700" />
+      </motion.div>
     </div>
   );
 }

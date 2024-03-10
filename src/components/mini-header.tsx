@@ -1,10 +1,7 @@
 "use client";
 
-import { siteConfig } from "@/config/site";
 import { Logo } from "./logo";
-import { ThemeToggle } from "./theme-toggle";
 import { motion } from "framer-motion";
-import { MenuToggle } from "./menu-toggle";
 import MenuNew from "./ui/menu-new";
 
 export function HeaderMini() {

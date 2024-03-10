@@ -160,7 +160,7 @@ export default function Terminal() {
           </div>
         ))}
       </div>
-      <div className="flex w-full justify-evenly">
+      <div className="flex w-full justify-start">
         <h1 className="w-fit">
           <span className="text-[#859900]">hemram@H4-MM-3R</span>:
           <span className="text-[#268BD2]">~</span>
@@ -169,7 +169,7 @@ export default function Terminal() {
         </h1>
         <input
           ref={inputRef}
-          className="outline-none text-text bg-background pl-[1em] transition-all duration-700 w-[154px]"
+          className="outline-none text-text bg-background transition-all duration-700 w-[154px] pl-2"
           value={command}
           onChange={handleInputChange}
           onKeyDown={handleKeyDown}

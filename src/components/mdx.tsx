@@ -14,7 +14,7 @@ const components = {
   h1: ({ className, ...props }: any) => (
     <h1
       className={cn(
-        "my-4 text-cyan text-4xl font-bold",
+        "my-4 text-invert-accent-hightlights text-3xl font-bold",
         className
       )}
       {...props}
@@ -23,7 +23,7 @@ const components = {
   h2: ({ className, ...props }: any) => (
     <h2
       className={cn(
-        "my-4 text-4xl font-bold tracking-tight",
+        "my-4 text-3xl font-bold tracking-tight text-text-emphasis",
         className
       )}
       {...props}
@@ -32,7 +32,7 @@ const components = {
   h3: ({ className, ...props }: any) => (
     <h3
       className={cn(
-        "my-2 text-3xl font-bold tracking-tight ",
+        "my-2 text-2xl font-bold tracking-tight text-text ",
         className
       )}
       {...props}
@@ -41,7 +41,7 @@ const components = {
   h4: ({ className, ...props }: any) => (
     <h4
       className={cn(
-        "my-2 text-2xl font-bold tracking-tight",
+        "my-2 text-xl font-bold tracking-tight text-text",
         className
       )}
       {...props}
@@ -50,7 +50,7 @@ const components = {
   h5: ({ className, ...props }: any) => (
     <h5
       className={cn(
-        "my-2 text-xl font-bold tracking-tight",
+        "my-2 text-lg font-bold tracking-tight text-text",
         className
       )}
       {...props}
@@ -59,7 +59,7 @@ const components = {
   h6: ({ className, ...props }: any) => (
     <h6
       className={cn(
-        "my-4 text-lg font-bold leading-tight",
+        "my-4 text-lg font-bold leading-tight text-text",
         className
       )}
       {...props}
@@ -67,6 +67,7 @@ const components = {
   ),
   a: ({ className, ...props }: any) => (
     <a
+    target="_blank"
       className={cn("font-medium underline underline-offset-4 text-blue", className)}
       {...props}
     />

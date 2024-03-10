@@ -1,11 +1,12 @@
 "use client";
 
-import { fontBitMap } from "@/lib/fonts";
+import { fontBitMap, fontGrot } from "@/lib/fonts";
 import { cn, anim } from "@/lib/utils";
 import { Mdx } from "@/src/components/mdx";
 import { BlogProps } from "@/types/nav";
 import { allDocs } from "contentlayer/generated";
 import { motion, useScroll, useSpring } from "framer-motion";
+import { GeistSans } from "geist/font/sans";
 import { ChevronLeft } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -58,17 +59,18 @@ export default function page({ params }: BlogProps) {
         <div className="h-[33px] w-[34px] bg-invert-accent-hightlights absolute z-0" />
       </div>
 
-      <div className="h-[8vh] sm:h-[15vh]"></div>
-      <article className="container relative max-w-3xl py-6 lg:py-10 bg-background">
+      <div className="h-[9vh] sm:h-[15vh]"></div>
+      <div className="h-[6vh] sm:hidden bg-background"></div>
+      <article className="min-[1400px]:max-w-[1400px] px-6 mx-auto w-full relative max-w-3xl py-6 lg:py-10 bg-background">
         <div>
-          <h1 className="mb-2 inline-block font-black text-4xl leading-tight lg:text-5xl text-text-emphasis">
+          <h1 className={cn(GeistSans.className, "mb-2 inline-block font-bold text-3xl leading-tight lg:text-5xl text-invert-accent-hightlights")}>
             {blog.title}
           </h1>
           <time
             dateTime="April 9, 2023"
-            className="block text-sm text-muted-foreground"
+            className="block text-base text-text-emphasis"
           >
-            Published on "April 9, 2023"
+            {blog.date} . {blog.duration} min to read
           </time>
         </div>
         {blog.image && (
