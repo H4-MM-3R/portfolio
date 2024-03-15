@@ -24,3 +24,20 @@ export const anim: any = {
     delay: 0.05,
   },
 };
+
+export const anim_new: any = {
+  initial: {
+    opacity: 0,
+  },
+  animate: {
+    opacity: 1,
+  },
+  exit: {
+    opacity: 0,
+  },
+  transition: {
+    ease: [0.76, 0, 0.24, 1],
+    duration: 0.7,
+    delay: 0.05,
+  },
+};
