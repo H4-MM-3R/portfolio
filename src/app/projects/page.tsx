@@ -84,7 +84,7 @@ export default function page() {
                                     <header>
                                         <h3 className="mb-[10px]">
                                             <Link
-                                                className={cn(fontGrot.className, "hover:text-cyan text-2xl font-semibold text-invert-accent-hightlights")}
+                                                className={cn(fontGrot.className, "hover:font-bold hover:text-green dark:hover:text-cyan text-2xl font-extrabold text-invert-accent-hightlights")}
                                                 href="/blogs"
                                             >
                                                 Time to Have More Fun

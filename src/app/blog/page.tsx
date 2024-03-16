@@ -68,7 +68,7 @@ export default function BlogPage() {
                                                 className="group relative flex flex-col sm:flex-row space-y-2 sm:space-x-8"
                                             >
                                                 <div className="group relative flex flex-col space-y-2">
-                                                    <h2 className="text-xl font-bold text-invert-accent-hightlights group-hover:text-cyan transition-colors duration-500">
+                                                    <h2 className="text-xl font-bold text-invert-accent-hightlights group-hover:text-yellow dark:group-hover:text-cyan transition-colors duration-500">
                                                         {blogs[i].title}
                                                     </h2>
                                                     <div className="flex space-x-2">

@@ -37,7 +37,7 @@ const config: Config = {
                 cyan: "var(--cyan)",
                 violet: "var(--violet)",
                 green: "var(--green)",
-                orange: "",
+                orange: "var(--orange)",
             },
             borderRadius: {
                 lg: `var(--radius)`,

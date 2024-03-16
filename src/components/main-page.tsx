@@ -8,7 +8,7 @@ import KeyBoardHR from "../components/ui/keyboard";
 import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 
-export default function Home() {
+export default function MainPage() {
   const [cursor, setCursor] = React.useState(true);
 
   const toggleVisibility = () => {
@@ -20,7 +20,7 @@ export default function Home() {
   }, [cursor]);
 
   return (
-    <>
+    <div>
       <div className="h-[15vh] sm:h-[20vh]" />
       <motion.div className="flex flex-col sm:flex-row justify-center items-center h-full sm:h-[60vh] md:h-[70vh] px-[10vw] sm:space-x-8">
         <div className="flex justify-center items-center gap-8">
@@ -125,21 +125,23 @@ export default function Home() {
           }}
           className="w-full h-[40vh] sm:h-full"
         >
-          <Canvas className="w-full h-full">
-            <KeyBoardHR />
-            <OrbitControls
-              enableZoom={false}
-              autoRotate={true}
-              autoRotateSpeed={0.5}
-            />
-            <directionalLight position={[20, 15, 5]} />
-          </Canvas>
+          <Suspense fallback={<div>Loading...</div>}>
+            <Canvas className="w-full h-full">
+              <KeyBoardHR />
+              <OrbitControls
+                enableZoom={false}
+                autoRotate={true}
+                autoRotateSpeed={0.5}
+              />
+              <directionalLight position={[20, 15, 5]} />
+            </Canvas>
+          </Suspense>
         </motion.div>
       </motion.div>
       <div className="h-[40vh]" />
       <div className="h-[40vh]" />
       <div className="h-[40vh]" />
       <div className="h-[40vh]" />
-    </>
+    </div>
   );
 }

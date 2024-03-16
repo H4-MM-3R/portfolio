@@ -1,0 +1,52 @@
+"use client";
+
+import React from "react";
+import { useGLTF } from "@react-three/drei";
+import { useMediaQuery } from "@/lib/useMediaQuery";
+
+export function KeyBoardHR() {
+  const isMobile = useMediaQuery("(min-width: 640px)");
+  const isIPad = useMediaQuery("(min-width: 768px)");
+  const isLarge = useMediaQuery("(min-width: 1024px)");
+  const { scene } = useGLTF("/key_board.gltf");
+  {
+    /*isMobile ? (
+                      <mesh scale={[0.2, 0.2, 0.2]}>
+                        <primitive
+                          object={scene}
+                          rotation={[0, Math.PI / 2, Math.PI / 4]}
+                          zoom={0.5}
+                        />
+                      </mesh>
+                    ) : (
+                      <mesh scale={[0.35, 0.35, 0.35]}>
+                        <primitive object={scene} rotation={[0, Math.PI / 2, Math.PI / 4]} />
+                      </mesh>
+                    )
+                 * */
+  }
+  return (
+    <>
+      {isMobile ? (
+        <mesh scale={[0.35, 0.35, 0.35]}>
+          <primitive object={scene} rotation={[0, Math.PI / 2, Math.PI / 4]} />
+        </mesh>
+      ) : isIPad ? (
+        <mesh scale={[0.35, 0.35, 0.35]}>
+          <primitive object={scene} rotation={[0, Math.PI / 2, Math.PI / 4]} />
+        </mesh>
+      ) : (
+        isLarge && (
+          <mesh scale={[0.35, 0.35, 0.35]}>
+            <primitive
+              object={scene}
+              rotation={[0, Math.PI / 2, Math.PI / 4]}
+            />
+          </mesh>
+        )
+      )}
+    </>
+  );
+}
+
+useGLTF.preload("/key_board.gltf");
