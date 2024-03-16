@@ -15,12 +15,12 @@ export default function Home() {
     setCursor((prev) => !prev);
   };
   useEffect(() => {
-    const blinkInterval = setTimeout(toggleVisibility, 500); // Change blinking speed as needed (e.g., 500ms for 0.5s blink interval)
-    return () => clearTimeout(blinkInterval); // Cleanup on component unmount
+    const blinkInterval = setTimeout(toggleVisibility, 500);
+    return () => clearTimeout(blinkInterval);
   }, [cursor]);
 
   return (
-    <>
+    <Suspense fallback={<div>Loading...</div>}>
       <div className="h-[15vh] sm:h-[20vh]" />
       <motion.div className="flex flex-col sm:flex-row justify-center items-center h-full sm:h-[60vh] md:h-[70vh] px-[10vw] sm:space-x-8">
         <div className="flex justify-center items-center gap-8">
@@ -140,6 +140,6 @@ export default function Home() {
       <div className="h-[40vh]" />
       <div className="h-[40vh]" />
       <div className="h-[40vh]" />
-    </>
+    </Suspense>
   );
 }
