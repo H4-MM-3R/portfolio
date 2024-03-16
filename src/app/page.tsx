@@ -1,45 +1,37 @@
 "use client";
 
 import { fontGrot } from "@/lib/fonts";
-import { cn, anim, anim_new } from "@/lib/utils";
+import { cn, anim } from "@/lib/utils";
 import { motion } from "framer-motion";
-import { Suspense, useRef } from "react";
 import React from "react";
-import dynamic from "next/dynamic";
+import { KeyBoardHR } from "../components/ui/keyboard";
+import { Canvas } from "@react-three/fiber";
+import {
+  OrbitControls,
+  OrthographicCamera,
+  PerspectiveCamera,
+} from "@react-three/drei";
 
 export default function Home() {
-  {
-    /* animate={{ borderRight: ["1px solid transparent", "1px solid ", "1px solid transparent"] }}
-     *<Spline scene="https://prod.spline.design/0jQb6Qz1o7hjXqUZ/scene.splinecode" className="w-full h-full" />
-     * */
-  }
-  const keyboard = useRef();
-
-  function onLoad(spline: any) {
-    keyboard.current = spline;
-  }
-
-  const Spline = dynamic(() => import("@splinetool/react-spline"));
-
   return (
     <motion.div
-      initial={anim_new.initial}
-      animate={anim_new.animate}
-      exit={anim_new.exit}
+      initial={anim.initial}
+      animate={anim.animate}
+      exit={anim.exit}
       transition={{
         ease: [0.76, 0, 0.24, 1],
         duration: 0.7,
       }}
-      className="container"
+      className=""
     >
       <div className="h-[20vh]" />
 
       <div className="flex justify-center items-center gap-8">
         <div className="gap-8 flex flex-col">
           <motion.h1
-            initial={anim_new.initial}
-            animate={anim_new.animate}
-            exit={anim_new.exit}
+            initial={anim.initial}
+            animate={anim.animate}
+            exit={anim.exit}
             transition={{
               ease: [0.76, 0, 0.24, 1],
               duration: 0.7,
@@ -53,9 +45,9 @@ export default function Home() {
           </motion.h1>
           <ul className="flex flex-col justify-center items-center gap-8">
             <motion.li
-              initial={anim_new.initial}
-              animate={anim_new.animate}
-              exit={anim_new.exit}
+              initial={anim.initial}
+              animate={anim.animate}
+              exit={anim.exit}
               transition={{
                 delay: 0.04,
                 ease: [0.76, 0, 0.24, 1],
@@ -66,9 +58,9 @@ export default function Home() {
               Galleries
             </motion.li>
             <motion.li
-              initial={anim_new.initial}
-              animate={anim_new.animate}
-              exit={anim_new.exit}
+              initial={anim.initial}
+              animate={anim.animate}
+              exit={anim.exit}
               transition={{
                 delay: 0.08,
                 ease: [0.76, 0, 0.24, 1],
@@ -79,9 +71,9 @@ export default function Home() {
               Galleries
             </motion.li>
             <motion.li
-              initial={anim_new.initial}
-              animate={anim_new.animate}
-              exit={anim_new.exit}
+              initial={anim.initial}
+              animate={anim.animate}
+              exit={anim.exit}
               transition={{
                 delay: 0.16,
                 ease: [0.76, 0, 0.24, 1],
@@ -94,23 +86,26 @@ export default function Home() {
           </ul>
         </div>
       </div>
+      <div className="absolute w-full h-screen top-0 flex justify-center items-center">
         <motion.div
-          initial={anim.initial}
-          animate={anim.animate}
-          exit={anim.exit}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
           transition={{
+            delay: 0.08,
             ease: [0.76, 0, 0.24, 1],
             duration: 0.7,
           }}
-          className="absolute h-full w-full top-0 left-0"
+          className="relative w-full h-full"
         >
-          <Spline
-            onLoad={onLoad}
-            scene="https://prod.spline.design/WsUIUIH4lUSnB5jZ/scene.splinecode"
-            className="w-full h-full"
-          />
+          <Canvas className="w-full h-full">
+            <KeyBoardHR />
+            <OrbitControls enableZoom={false} />
+            <directionalLight position={[20, 15, 5]} />
+          </Canvas>
         </motion.div>
-      <div className="flex justify-center items-center"></div>
+      </div>
+      <div className="h-[40vh]" />
     </motion.div>
   );
 }
