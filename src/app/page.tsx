@@ -145,12 +145,10 @@ export default function MainPage() {
                   autoRotate={true}
                   autoRotateSpeed={0.5}
                 />
-                <directionalLight position={[3, 3, 0]} intensity={1} />
-                <directionalLight position={[3, 0, 3]} intensity={1} />
-                <directionalLight position={[0, 3, 3]} intensity={1} />
-                <directionalLight position={[0, -3, -3]} intensity={1} />
-                <directionalLight position={[-3, 0, -3]} intensity={1} />
-                <directionalLight position={[-3, -3, 0]} intensity={1} />
+                <directionalLight position={[Math.sqrt(3), 0, 1]} intensity={2} />
+                <directionalLight position={[-Math.sqrt(3), 0, 1]} intensity={2} />
+                <directionalLight position={[Math.sqrt(3), -1, -1]} intensity={0.9} />
+                <directionalLight position={[-Math.sqrt(3), -1, -1]} intensity={0.9} />
               </Canvas>
             </Suspense>
           </motion.div>
