@@ -3,7 +3,7 @@
 import { fontGrot } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
-import React, { Suspense, useEffect } from "react";
+import React, { useEffect } from "react";
 import KeyBoardHR from "../components/ui/keyboard";
 import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
@@ -125,17 +125,15 @@ export default function MainPage() {
           }}
           className="w-full h-[40vh] sm:h-full"
         >
-          <Suspense fallback={<div>Loading...</div>}>
-            <Canvas className="w-full h-full">
-              <KeyBoardHR />
-              <OrbitControls
-                enableZoom={false}
-                autoRotate={true}
-                autoRotateSpeed={0.5}
-              />
-              <directionalLight position={[20, 15, 5]} />
-            </Canvas>
-          </Suspense>
+          <Canvas className="w-full h-full">
+            <KeyBoardHR />
+            <OrbitControls
+              enableZoom={false}
+              autoRotate={true}
+              autoRotateSpeed={0.5}
+            />
+            <directionalLight position={[20, 15, 5]} />
+          </Canvas>
         </motion.div>
       </motion.div>
       <div className="h-[40vh]" />
