@@ -99,7 +99,7 @@ export default function page() {
           transition={{ type: "spring", stiffness: 400, damping: 17 }}
           className="z-10 hidden md:block"
         >
-          <Link href="mailto:kuheram777@gmail.com">
+          <a href="mailto:kuheram777@gmail.com">
             <span
               className={cn(
                 fontBitMap.className,
@@ -108,14 +108,14 @@ export default function page() {
             >
               Get in Touch
             </span>
-          </Link>
+          </a>
         </motion.button>
         <motion.button
           whileTap={{ y: [-7, 0], x: [-7, 0] }}
           transition={{ type: "spring", stiffness: 400, damping: 17 }}
           className="z-10 md:hidden"
         >
-          <Link href="mailto:kuheram777@gmail.com">
+          <a href="mailto:kuheram777@gmail.com">
             <span
               className={cn(
                 fontBitMap.className,
@@ -124,7 +124,7 @@ export default function page() {
             >
               Get in Touch
             </span>
-          </Link>
+          </a>
         </motion.button>
         <div className="bg-invert-accent-hightlights w-[228px] h-[50px] absolute z-0" />
       </div>

@@ -14,10 +14,10 @@ export default function KeyBoardHR() {
       {nonMobile ? (
         Medium ? (
           Large ? (
-            <mesh scale={[0.35, 0.35, 0.35]}>
+            <mesh scale={[0.33, 0.33, 0.33]}>
               <primitive
                 object={scene}
-                rotation={[0, -Math.PI / 2, -Math.PI / 3]}
+                rotation={[0, -Math.PI / 2, -Math.PI / 2]}
                 zoom={0.5}
               />
             </mesh>
@@ -41,7 +41,8 @@ export default function KeyBoardHR() {
         )
       ) : (
         <mesh scale={[0.31, 0.31, 0.31]}>
-          <primitive object={scene} rotation={[0, -Math.PI / 2, -Math.PI / 3]} />
+          <primitive object={scene} 
+          rotation={[0, -Math.PI / 2, -Math.PI / 2]} />
         </mesh>
       )}
     </>

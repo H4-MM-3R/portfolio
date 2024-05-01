@@ -62,7 +62,7 @@ export default function BlogPage() {
                                     }}
                                 >
                                     <Link href={blogs[i].slug}>
-                                        <motion.div className=" flex justify-between items-center w-full bg-background p-4 rounded-lg transition-all duration-700 group">
+                                        <motion.div className=" flex justify-between items-center w-full bg-background p-4 rounded-lg transition-all duration-700 group border-2 border-text">
                                             <article
                                                 key={blogs[i]._id}
                                                 className="group relative flex flex-col sm:flex-row space-y-2 sm:space-x-8"

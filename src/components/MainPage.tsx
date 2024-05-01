@@ -122,7 +122,7 @@ export default function MainPage() {
             ease: [0.76, 0, 0.24, 1],
             duration: 0.7,
           }}
-          className="w-full h-[40vh] sm:h-full"
+          className="w-full h-[40vh] "
         >
           <Canvas className="w-full h-full">
             <KeyBoardHR />
@@ -135,10 +135,6 @@ export default function MainPage() {
           </Canvas>
         </motion.div>
       </motion.div>
-      <div className="h-[40vh]" />
-      <div className="h-[40vh]" />
-      <div className="h-[40vh]" />
-      <div className="h-[40vh]" />
     </motion.div>
   );
 }

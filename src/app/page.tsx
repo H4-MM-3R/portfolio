@@ -6,11 +6,9 @@ import React, { Suspense, useEffect } from "react";
 import KeyBoardHR from "../components/ui/keyboard";
 import { OrbitControls, SpotLight } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import { PointLight } from "three";
 
 export default function MainPage() {
   const [cursor, setCursor] = React.useState(true);
-  const [firstRender, setFirstRender] = React.useState(true);
 
   const toggleVisibility = () => {
     setCursor((prev) => !prev);
@@ -20,26 +18,58 @@ export default function MainPage() {
     return () => clearTimeout(blinkInterval);
   }, [cursor]);
 
-  useEffect(() => {
-    if (firstRender) {
-      const timer = setTimeout(() => {
-        setFirstRender(false);
-      }, 1000);
-      return () => clearTimeout(timer);
-    }
-  }, []);
 
   return (
     <>
       <div>
-        <div className="h-[15vh] sm:h-[20vh]" />
+        <div className="h-[8vh] sm:h-[20vh]" />
 
-        <motion.div className="flex flex-col sm:flex-row justify-center items-center h-full sm:h-[60vh] md:h-[70vh] px-[10vw] sm:space-x-8">
+        <motion.div className="flex flex-col sm:flex-row-reverse justify-center items-center h-full sm:h-[60vh] md:h-[70vh] sm:gap-48 px-[10vw]">
+          <motion.div
+            initial={{ opacity: 0, x: 35 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 35 }}
+            transition={{
+              delay: 0.08,
+              type: "tween",
+              ease: [0.76, 0, 0.24, 1],
+              duration: 0.7,
+            }}
+            className="w-full sm:h-full sm:w-[60vw] h-[30vh]"
+          >
+            <Suspense fallback={<div className="border-2 border-white w-full h-full flex justify-center items-center">Loading...</div>}>
+              <Canvas className="w-full h-full">
+                <KeyBoardHR />
+                <OrbitControls
+                  enablePan={false}
+                  enableZoom={false}
+                  autoRotate={true}
+                  autoRotateSpeed={0.5}
+                />
+                <directionalLight
+                  position={[Math.sqrt(3), 0, 1]}
+                  intensity={2}
+                />
+                <directionalLight
+                  position={[-Math.sqrt(3), 0, 1]}
+                  intensity={2}
+                />
+                <directionalLight
+                  position={[Math.sqrt(3), -1, -1]}
+                  intensity={0.9}
+                />
+                <directionalLight
+                  position={[-Math.sqrt(3), -1, -1]}
+                  intensity={0.9}
+                />
+              </Canvas>
+            </Suspense>
+          </motion.div>
           <div className="flex justify-center items-center gap-8">
             <div className="gap-2 flex flex-col">
               <motion.h1
                 initial={{
-                  x: -50,
+                  x: -35,
                   opacity: 0,
                 }}
                 animate={{
@@ -47,7 +77,7 @@ export default function MainPage() {
                   opacity: 1,
                 }}
                 exit={{
-                  x: -50,
+                  x: -35,
                   opacity: 0,
                 }}
                 transition={{
@@ -65,7 +95,7 @@ export default function MainPage() {
                 <motion.li
                   className={cn(fontGrot.className, "text-2xl sm:text-4xl")}
                   initial={{
-                    x: -50,
+                    x: -35,
                     opacity: 0,
                   }}
                   animate={{
@@ -73,7 +103,7 @@ export default function MainPage() {
                     opacity: 1,
                   }}
                   exit={{
-                    x: -50,
+                    x: -35,
                     opacity: 0,
                   }}
                   transition={{
@@ -90,7 +120,7 @@ export default function MainPage() {
                     "text-xl sm:text-4xl text-center",
                   )}
                   initial={{
-                    x: -50,
+                    x: -35,
                     opacity: 0,
                   }}
                   animate={{
@@ -98,7 +128,7 @@ export default function MainPage() {
                     opacity: 1,
                   }}
                   exit={{
-                    x: -50,
+                    x: -35,
                     opacity: 0,
                   }}
                   transition={{
@@ -114,7 +144,7 @@ export default function MainPage() {
                       className={cn(
                         "border border-r",
                         cursor
-                          ? "border-blue dark:border-cyan"
+                          ? "border-yellow dark:border-cyan"
                           : "border-background-highlights",
                       )}
                     />
@@ -124,34 +154,6 @@ export default function MainPage() {
               </ul>
             </div>
           </div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: 50 }}
-            transition={{
-              delay: 0.08,
-              type: "tween",
-              ease: [0.76, 0, 0.24, 1],
-              duration: 0.7,
-            }}
-            className="w-full h-[40vh] sm:h-full"
-          >
-            <Suspense fallback={<div>Loading...</div>}>
-              <Canvas className="w-full h-full">
-                <KeyBoardHR />
-                <OrbitControls
-                  enableZoom={false}
-                  autoRotate={true}
-                  autoRotateSpeed={0.5}
-                />
-                <directionalLight position={[Math.sqrt(3), 0, 1]} intensity={2} />
-                <directionalLight position={[-Math.sqrt(3), 0, 1]} intensity={2} />
-                <directionalLight position={[Math.sqrt(3), -1, -1]} intensity={0.9} />
-                <directionalLight position={[-Math.sqrt(3), -1, -1]} intensity={0.9} />
-              </Canvas>
-            </Suspense>
-          </motion.div>
         </motion.div>
 
         <div className="h-[40vh]" />
