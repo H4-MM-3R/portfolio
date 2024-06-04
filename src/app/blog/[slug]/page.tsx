@@ -1,6 +1,5 @@
 "use client";
-
-import { fontBitMap, fontGrot } from "@/lib/fonts";
+import { fontBitMap } from "@/lib/fonts";
 import { cn, anim } from "@/lib/utils";
 import { Mdx } from "@/src/components/mdx";
 import { BlogProps } from "@/types/nav";
