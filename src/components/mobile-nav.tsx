@@ -18,13 +18,13 @@ export default function MobileNav({
   return (
     <div
       className={cn(
-        "flex flex-col justify-around px-[40px] pt-[14px] pb-[50px] h-full relative overflow-hidden",
+        "flex flex-col justify-around px-[40px] pb-[50px] h-full relative overflow-hidden",
       )}
     >
       <motion.div
         variants={menuLogo}
         animate={isActive ? "open" : "closed"}
-        className="mb-8"
+        className="mb-2"
       >
         <ThemeToggle />
       </motion.div>

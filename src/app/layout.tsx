@@ -3,11 +3,11 @@
 import "@/styles/globals.css";
 import { fontSans } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
-import { Header } from "../components/header";
 import { ThemeProvider } from "../components/theme-provider";
-import { HeaderMini } from "../components/mini-header";
+import { MiniHeader } from "../components/mini-header";
 import TerminalIcon from "../components/terminal/terminal-icon";
 import PageAnimatePresence from "../components/transitions/page-animate-presence";
+import MainHeader from "../components/main-header";
 
 export default function RootLayout({
     children,
@@ -23,8 +23,8 @@ export default function RootLayout({
                 )}
             >
                 <ThemeProvider attribute="class" enableSystem>
-                    <Header />
-                    <HeaderMini />
+                <MainHeader />
+                    <MiniHeader />
                     <PageAnimatePresence>{children}</PageAnimatePresence>
                     <TerminalIcon />
                 </ThemeProvider>

@@ -2,7 +2,7 @@ export const menu = {
   open: {
     width: "240px",
     height: "425px",
-    top: "-25px",
+    top: "-15px",
     right: "-30px",
     opacity: 1,
     transition: {

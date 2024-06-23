@@ -65,10 +65,10 @@ export default function page() {
               <motion.div
                 whileHover={{ y: -9, x: -9 }}
                 whileTap={{ y: 0, x: 0 }}
-                className="md:block hidden"
+                className="md:block hidden h-full"
               >
                 <motion.div
-                  className="border-[2px] border-invert-accent-hightlights flex justify-between flex-col items-start relative h-full py-8 px-7 transition-all bg-background"
+                  className="border-[2px] border-invert-accent-hightlights relative h-full py-8 px-7 transition-all bg-background"
                   style={{
                     clipPath:
                       "polygon(12px 0%, calc(100% - 12px) 0%, 100% 12px, 100% 100%, calc(100% - 12px) 100%, 12px 100%, 0px 100%, 0px 0px)",
@@ -83,7 +83,8 @@ export default function page() {
                       height: "2px",
                     }}
                   ></span>
-                  <Link href={project.href} target="_blank">
+                  <Link href={project.href} target="_blank" >
+                  <div className="flex flex-col items-start justify-between h-full">
                     <header>
                       <h3
                         className={cn(
@@ -116,10 +117,13 @@ export default function page() {
                         ))}
                       </ul>
                     </footer>
+                  
+                  </div>
                   </Link>
                 </motion.div>
               </motion.div>
 
+              {/* Mobile View */}
               <motion.div
                 whileTap={{ y: 0, x: 0 }}
                 initial={{ y: -7, x: -7 }}

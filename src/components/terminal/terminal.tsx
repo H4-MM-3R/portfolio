@@ -21,7 +21,7 @@ export default function Terminal() {
 
   useEffect(() => {
     if (inputRef.current) {
-      inputRef.current.focus();
+      inputRef.current.blur();
     }
   }, []);
 
@@ -148,7 +148,8 @@ export default function Terminal() {
             Terminal
           </h1>
         </div>
-        <div>Type 'help' to see the list of available commands.</div>
+        <div className="md:block hidden">Type 'help' to see the list of available commands.</div>
+        <div className="md:hidden">Tap below and Type 'help' to see the list of available commands.</div>
         {output.map((item: any, index: any) => (
           <div className="mb-[0.2em]" key={index}>
             <h1 className={cn(fontNerd.className, "mb-[0.1em] text-sm")}>

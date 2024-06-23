@@ -12,7 +12,7 @@ export default function AwwwardsMenu() {
 
   return (
     <div>
-      <div className="fixed top-[25px] right-[30px] z-40 rounded-3xl">
+      <div className="absolute top-[15px] right-[30px] z-40 rounded-3xl">
         <motion.div
           variants={menu}
           animate={isActive ? "open" : "closed"}
