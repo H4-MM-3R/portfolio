@@ -1,7 +1,7 @@
 "use client";
 import { fontBitMap } from "@/lib/fonts";
 import { cn, anim } from "@/lib/utils";
-import { Mdx } from "@/src/components/mdx";
+import { Mdx } from "@/src/components/mdx/Mdx";
 import { BlogProps } from "@/types/nav";
 import { allDocs } from "contentlayer/generated";
 import { motion, useScroll, useSpring } from "framer-motion";
