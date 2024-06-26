@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import FrozenRoute from "./frozen-route";
+import FrozenRoute from "./FrozenRoute";
 
 const PageAnimatePresence = ({ children }: { children: React.ReactNode }) => {
     const pathname = usePathname();

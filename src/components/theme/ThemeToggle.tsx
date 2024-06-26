@@ -5,22 +5,6 @@ import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 
 export function ThemeToggle() {
-    {
-        /*
-            <button
-              onClick={() => setIsActive(!isActive)}
-              className="absolute top-0 right-0 w-[32px] h-[32px] flex justify-center items-center cursor-pointer rounded-3xl bg-background-highlights border-[2px] border-text-secondary overflow-hidden transition-colors duration-700"
-            >
-              <motion.div
-                className="relative w-full h-full flex justify-center items-center flex-wrap mt-2"
-                animate={{ top: isActive ? "-73%" : "0%" }}
-              >
-                <MenuIcon className="w-5 h-5 text-invert-accent-hightlights" />
-                <X className="w-5 h-5 text-invert-accent-hightlights" />
-              </motion.div>
-            </button>
-    */
-    }
     const { setTheme, theme } = useTheme();
     return (
         <button

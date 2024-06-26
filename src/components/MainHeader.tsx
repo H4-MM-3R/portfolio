@@ -3,10 +3,10 @@ import { fontBitMap } from '@/lib/fonts'
 import { cn } from '@/lib/utils'
 import { motion } from 'framer-motion'
 import React from 'react'
-import { Logo } from './logo'
-import { Nav } from './nav'
 import Link from 'next/link'
-import { ThemeToggle } from './theme-toggle'
+import { Logo } from './Logo'
+import { Navbar } from './Navbar'
+import { ThemeToggle } from './theme/ThemeToggle'
 
 export default function MainHeader() {
     return (
@@ -14,7 +14,7 @@ export default function MainHeader() {
                 <div className="bg-background relative border-text border-[2px] w-[75vw] rounded-full transition-colors duration-700">
                     <div className="flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0 mx-8 ">
                         <Logo />
-                        <Nav items={siteConfig.mainNav} />
+                        <Navbar items={siteConfig.mainNav} />
                         <div className="space-x-4 flex justify-center items-center">
                             <Link
                                 href="https://drive.google.com/file/d/16T02-bVEIz6guMlm2kYOdpGTdP84ObTE/view?usp=drivesdk"

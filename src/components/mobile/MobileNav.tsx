@@ -2,10 +2,10 @@ import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import React from "react";
-import { ThemeToggle } from "./theme-toggle";
 import { links, menuItems, menuLogo, menuResume } from "@/config/mobile";
 import { usePathname } from "next/navigation";
 import { fontBitMap, fontMono } from "@/lib/fonts";
+import { ThemeToggle } from "../theme/ThemeToggle";
 
 export default function MobileNav({
   isActive,

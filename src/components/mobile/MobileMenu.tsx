@@ -3,11 +3,11 @@
 import { motion } from "framer-motion";
 import { MenuIcon, X } from "lucide-react";
 import React from "react";
-import MobileNav from "../mobile-nav";
 import { menu } from "@/config/mobile";
+import MobileNav from "./MobileNav";
 
 
-export default function AwwwardsMenu() {
+export default function MobileMenu() {
   const [isActive, setIsActive] = React.useState(false);
 
   return (

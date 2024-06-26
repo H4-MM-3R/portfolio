@@ -1,19 +1,11 @@
 "use client";
-import Terminal from "./terminal";
-import { Maximize2, Minus, TerminalSquareIcon, X } from "lucide-react";
+import { TerminalSquareIcon } from "lucide-react";
 import * as React from "react";
 
-import {
-    Dialog,
-    DialogContent,
-    DialogTrigger,
-} from "@/src/components/ui/dialog";
-import {
-    Drawer,
-    DrawerContent,
-    DrawerTrigger,
-} from "@/src/components/ui/drawer";
 import { useMediaQuery } from "@/lib/useMediaQuery";
+import Terminal from "./Terminal";
+import { Dialog, DialogContent, DialogTrigger } from "../ui/shadcn/Dialog";
+import { Drawer, DrawerContent, DrawerTrigger } from "../ui/shadcn/Drawer";
 
 export default function TerminalIcon() {
     const [open, setOpen] = React.useState(false);

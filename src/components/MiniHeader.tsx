@@ -1,8 +1,8 @@
 "use client";
 
-import { Logo } from "./logo";
 import { motion } from "framer-motion";
-import MenuNew from "./ui/menu-new";
+import { Logo } from "./Logo";
+import MobileMenu from "./mobile/MobileMenu";
 
 export function MiniHeader() {
   return (
@@ -11,7 +11,7 @@ export function MiniHeader() {
       <div className="ml-6">
       <Logo />
       </div>
-      <MenuNew />
+      <MobileMenu />
       <div className="h-6" />
     </motion.header>
   );

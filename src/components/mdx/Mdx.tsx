@@ -5,10 +5,10 @@ import Image from "next/image"
 
 
 import { cn } from "@/lib/utils"
-import { MdxCard } from "./mdx-card"
-import { Callout } from "./mdx-callout"
 import { useMDXComponent } from "@/lib/useMDX"
 import { MdxProps } from "@/types/nav"
+import { MdxCard } from "./MdxCard"
+import { Callout } from "./MdxCallout"
 
 const components = {
   h1: ({ className, ...props }: any) => (

@@ -20,7 +20,7 @@ export default function page() {
       }}
       key={"projects"}
     >
-      <div className="h-[15vh]"></div>
+      <div className="h-[15vh]" />
 
       <motion.div
         initial={anim.initial}
@@ -38,7 +38,8 @@ export default function page() {
       >
         Projects
       </motion.div>
-      <div className="h-[5vh]"></div>
+
+      <div className="h-[5vh]" />
 
       <div className="w-full mx-auto px-8 sm:px-20 min-[1400px]:max-w-[1400px]">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 list-none p-0 mt-[50px] gap-[35px] relative">
@@ -83,47 +84,47 @@ export default function page() {
                       height: "2px",
                     }}
                   ></span>
-                  <Link href={project.href} target="_blank" >
-                  <div className="flex flex-col items-start justify-between h-full">
-                    <header>
-                      <h3
-                        className={cn(
-                          fontGrot.className,
-                          "group-hover:font-bold group-hover:text-yellow dark:group-hover:text-cyan text-2xl font-extrabold text-invert-accent-hightlights mb-[10px] group transition-colors duration-500",
-                        )}
-                      >
-                        {project.title}
-                      </h3>
-                      <div
-                        className={cn(
-                          GeistSans.className,
-                          "text-sm text-text-emphasis",
-                        )}
-                      >
-                        {project.brief}
-                      </div>
-                    </header>
-                    <footer>
-                      <ul
-                        className={cn(
-                          fontMono.className,
-                          "flex items-end flex-1 flex-wrap p-0 mt-[20px] list-none flex-grow gap-[15px] text-xs",
-                        )}
-                      >
-                        {project.tags.map((tag) => (
-                          <li className="outline-[1px] rounded-full bg-background-highlights px-2 py-1 shadow-sm shadow-invert-accent-hightlights text-text-emphasis font-bold">
-                            {tag}
-                          </li>
-                        ))}
-                      </ul>
-                    </footer>
-                  
-                  </div>
+                  <Link href={project.href} target="_blank">
+                    <div className="flex flex-col items-start justify-between h-full">
+                      <header>
+                        <h3
+                          className={cn(
+                            fontGrot.className,
+                            "group-hover:font-bold group-hover:text-yellow dark:group-hover:text-cyan text-2xl font-extrabold text-invert-accent-hightlights mb-[10px] group transition-colors duration-500",
+                          )}
+                        >
+                          {project.title}
+                        </h3>
+                        <div
+                          className={cn(
+                            GeistSans.className,
+                            "text-sm text-text-emphasis",
+                          )}
+                        >
+                          {project.brief}
+                        </div>
+                      </header>
+                      <footer>
+                        <ul
+                          className={cn(
+                            fontMono.className,
+                            "flex items-end flex-1 flex-wrap p-0 mt-[20px] list-none flex-grow gap-[15px] text-xs",
+                          )}
+                        >
+                          {project.tags.map((tag) => (
+                            <li className="outline-[1px] rounded-full bg-background-highlights px-2 py-1 shadow-sm shadow-invert-accent-hightlights text-text-emphasis font-bold">
+                              {tag}
+                            </li>
+                          ))}
+                        </ul>
+                      </footer>
+                    </div>
                   </Link>
                 </motion.div>
               </motion.div>
 
               {/* Mobile View */}
+
               <motion.div
                 whileTap={{ y: 0, x: 0 }}
                 initial={{ y: -7, x: -7 }}
@@ -152,7 +153,9 @@ export default function page() {
                     target="_blank"
                   >
                     <header>
-                      <h3 className="mb-[10px] dark:group-hover:text-cyan group-hover:text-yellow">{project.title}</h3>
+                      <h3 className="mb-[10px] dark:group-hover:text-cyan group-hover:text-yellow">
+                        {project.title}
+                      </h3>
                       <div className="text-sm">{project.brief}</div>
                     </header>
                     <footer>
