@@ -63,6 +63,7 @@ export default function page() {
                     "polygon(12px 0%, calc(100% - 12px) 0%, 100% 12px, 100% 100%, calc(100% - 12px) 100%, 12px 100%, 0px 100%, 0px 0px)",
                 }}
               ></div>
+
               <motion.div
                 whileHover={{ y: -9, x: -9 }}
                 whileTap={{ y: 0, x: 0 }}

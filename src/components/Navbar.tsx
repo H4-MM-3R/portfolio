@@ -11,7 +11,7 @@ export function Navbar({ items }: MainNavProps) {
   const currentRoute = usePathname() || "/";
 
   return (
-    <nav className="flex gap-12">
+    <nav className="flex gap-12 pr-10">
       {items?.map((item) => (
         <Link
           className={cn(

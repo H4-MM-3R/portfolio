@@ -31,7 +31,7 @@ export default function TerminalIcon() {
     return (
         <Drawer open={open} onOpenChange={setOpen}>
             <DrawerTrigger asChild>
-                <div className="fixed bottom-[6vh] right-[4vw] outline p-4 rounded-full bg-invert-accent-hightlights ">
+                <div className="fixed bottom-[6vh] right-[4vw] outline p-4 rounded-full bg-invert-accent-hightlights z-10">
                     <TerminalSquareIcon className="text-background h-7 w-7" />
                 </div>
             </DrawerTrigger>

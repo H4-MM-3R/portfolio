@@ -1,33 +1,45 @@
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import React from "react";
-import { links, menuItems, menuLogo, menuResume } from "@/config/mobile";
+import React, { useEffect } from "react";
+import { links, menuItems } from "@/config/mobile";
 import { usePathname } from "next/navigation";
-import { fontBitMap, fontMono } from "@/lib/fonts";
-import { ThemeToggle } from "../theme/ThemeToggle";
+import { fontMono } from "@/lib/fonts";
 
 export default function MobileNav({
   isActive,
   setIsActive,
+  menuRef,
 }: {
   isActive: any;
   setIsActive: any;
+  menuRef: any;
 }) {
   const path = usePathname();
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (!menuRef.current.contains(event.target as Node)) {
+        setIsActive(false);
+      }
+    };
+
+    if (isActive) {
+      document.addEventListener("click", handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [isActive, setIsActive]);
   return (
     <div
       className={cn(
         "flex flex-col justify-around px-[40px] pb-[50px] h-full relative overflow-hidden",
       )}
+      ref={menuRef}
     >
-      <motion.div
-        variants={menuLogo}
-        animate={isActive ? "open" : "closed"}
-        className="mb-2"
-      >
-        <ThemeToggle />
-      </motion.div>
+      <div className="mb-2" />
+
       {links.map((link, i) => {
         const { title, href } = link;
         return (
@@ -54,32 +66,6 @@ export default function MobileNav({
           </motion.div>
         );
       })}
-      <motion.div
-        variants={menuResume}
-        animate={isActive ? "open" : "closed"}
-        className="flex items-center mt-4"
-      >
-        <motion.button
-          whileTap={{ y: 0, x: 0 }}
-          initial={{ y: -7, x: -7 }}
-          transition={{ type: "spring", stiffness: 400, damping: 17 }}
-          className="z-10"
-        >
-          <Link 
-          target="_blank"
-          href="https://drive.google.com/file/d/16T02-bVEIz6guMlm2kYOdpGTdP84ObTE/view?usp=drivesdk">
-            <span
-              className={cn(
-                fontBitMap.className,
-                "text-invert-accent-hightlights bg-background-highlights outline outline-text-emphasis p-4 transition-colors duration-700",
-              )}
-            >
-              Resume
-            </span>
-          </Link>
-        </motion.button>
-        <div className="absolute h-[43px] w-[125px] bg-invert-accent-hightlights z-0 outline outline-invert-accent-hightlights transition-colors duration-700" />
-      </motion.div>
     </div>
   );
 }
