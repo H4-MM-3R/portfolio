@@ -10,6 +10,7 @@ import KeyBoardHR from "../components/Keyboard";
 import TextRevealByWord from "../components/ui/magicui/TextReveal";
 import Link from "next/link";
 import ResumeButton from "../components/Resume";
+import Lenis from "lenis";
 
 export default function MainPage() {
   const [cursor, setCursor] = React.useState(true);
@@ -17,6 +18,18 @@ export default function MainPage() {
   const toggleVisibility = () => {
     setCursor((prev) => !prev);
   };
+
+  useEffect(() => {
+      const lenis = new Lenis();
+
+      function raf(time: number){
+          lenis.raf(time);
+          requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
+  }, [])
+
+
   useEffect(() => {
     const blinkInterval = setTimeout(toggleVisibility, 500);
     return () => clearTimeout(blinkInterval);
